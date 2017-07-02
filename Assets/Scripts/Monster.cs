@@ -5,11 +5,13 @@ using UnityEngine;
 public class Monster : MonoBehaviour {
 
     public float speed;
-    private GameObject monsterBody;
+    public Transform target;
+    public float minDist;
+    public float maxDist;
 
     void Awake()
     {
-        monsterBody = GetComponent<GameObject>();
+        //monsterBody = GetComponent<GameObject>();
     }
 
 	// Use this for initialization
@@ -19,6 +21,10 @@ public class Monster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        monsterBody.transform.position = new Vector3(speed, 0, 0);
+        transform.LookAt(target);
+        if(Vector3.Distance(transform.position, target.position) >= minDist)
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
 	}
 }
