@@ -7,6 +7,9 @@ By: Mike Boyer
 Find this project on Github! 
 https://github.com/mikboy018/Museum
 
+3 JUL 17 - At the reviewer's request, added a narrator to each of the screens in the Augmented Reality, Real Estate, Education, and 
+Movie rooms. Nothing additional is required for the Video Game Room.
+
 	
 2 JUL 17 - Time to test/fix android issues. Rolled back to AVPro, and GVR 1.0.3. Now I'm figuring out how to debug,
 which seems like subject matter that should've been covered somewhere earlier in the course.

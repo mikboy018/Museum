@@ -10,6 +10,7 @@ public class UnlockScript : MonoBehaviour
     public bool collectionTrue;
     public Scene scene;
     public string title;
+    public AudioSource narrator;
     public void Awake()
     {
         scene = SceneManager.GetActiveScene();
@@ -59,8 +60,7 @@ public class UnlockScript : MonoBehaviour
     {
         MediaPlayer mp = this.GetComponentInChildren<MediaPlayer>();
         mp.Play();
-
-        
+        narrator.Play();        
     }
 }
   
