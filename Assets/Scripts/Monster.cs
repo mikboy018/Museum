@@ -8,10 +8,13 @@ public class Monster : MonoBehaviour {
     public Transform target;
     public float minDist;
     public float maxDist;
+    public AudioSource monsterNoise;
+    public float time;
 
     void Awake()
     {
         //monsterBody = GetComponent<GameObject>();
+        monsterNoise.Play();
     }
 
 	// Use this for initialization
@@ -25,6 +28,8 @@ public class Monster : MonoBehaviour {
         if(Vector3.Distance(transform.position, target.position) >= minDist)
         {
             transform.position += transform.forward * speed * Time.deltaTime;
+            
         }
 	}
+    
 }

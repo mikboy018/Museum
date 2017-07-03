@@ -10,6 +10,10 @@ public class ZapperScript : MonoBehaviour {
     public GameObject[] zapperArray;
     public GameObject[] zapBlastArray;
     public Transform weapon;
+    public Transform monster;
+    public GameObject poof;
+    public AudioSource gunFire;
+    public AudioSource monsterBoom;
    
 
     // Use this for initialization
@@ -45,9 +49,11 @@ public class ZapperScript : MonoBehaviour {
             if(hit.transform.name == "RobotMonster")
             {
                 Destroy(GameObject.Find("RobotMonster"));
+                Object.Instantiate(poof, monster.position, Quaternion.Euler(-90f, 0f, 0f));
                 Debug.Log("Got him!");
                 StartCoroutine(flash());
                 StartCoroutine(disableWeapon());
+                monsterBoom.Play();
             }
             if (hit.transform.name != "Floor")
             {
@@ -64,6 +70,7 @@ public class ZapperScript : MonoBehaviour {
         {
             go.SetActive(true);
         }
+        gunFire.Play();
 
         StartCoroutine(flash());
        /*
